@@ -4,29 +4,12 @@ if (!defined('BASEPATH'))
 /***
  * File: (Codeigniterapp)/libraries/Controllerlist.php
  * 
- * A simple library to list al your controllers with their methods.
- * This library will return an array with controllers and methods
  * 
- * The library will scan the "controller" directory and (in case of) one (1) subdirectory level deep
- * for controllers
- * 
- * Usage in one of your controllers:
- * 
- * $this->load->library('controllerlist');
- * print_r($this->controllerlist->getControllers());
- * 
- * @author Peter Prins 
  */
 class ControllerList {
 	
-	/**
-	 * Codeigniter reference 
-	 */
 	private $CI;
-	
-	/**
-	 * Array that will hold the controller names and methods
-	 */
+
 	private $aControllers;
 	
 	// Construct
@@ -39,15 +22,14 @@ class ControllerList {
 	}
 	
 	/**
-	 * Return all controllers and their methods
-	 * @return array
+	 * Get Controller
 	 */
 	public function getControllers() {
 		return $this->aControllers;
 	}
 	
 	/**
-	 * Set the array holding the controller name and methods
+	 * Set the method to Load Controller
 	 */
 	public function setControllerMethods($p_sControllerName, $p_aControllerMethods) {
 		$this->aControllers[$p_sControllerName] = $p_aControllerMethods;
